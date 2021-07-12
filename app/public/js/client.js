@@ -69,9 +69,13 @@ socket.on("new-join-room", (newjoin) => {
     <span class="status busy"></span>
   </div>
   <p class="name-time">
-    <span class="name">Thang Luan no vo kia</span>
-    <span class="time">15/02/2019</span>
+    <span class="name">${newjoin}</span>
+    <span class="time">${new Date()}</span>
   </p>
 </li>`;
   console.log(newjoin);
 });
+socket.emit(
+  "join-info-room",
+  Qs.parse(location.search, { ignoreQueryPrefix: true })
+);
