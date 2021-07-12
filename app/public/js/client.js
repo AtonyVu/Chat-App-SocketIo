@@ -1,5 +1,10 @@
 const socket = io();
 let id = "";
+let avatarMale =
+  "https://www.kindpng.com/picc/m/22-223941_transparent-avatar-png-male-avatar-icon-transparent-png.png";
+let avatarFemale =
+  "https://i.pinimg.com/474x/82/ab/35/82ab3533ee71daf256f23c1ccf20ad6f.jpg";
+let sex = "";
 const Acknewledgement = () => {
   console.log("đã gửi tin nhắn ");
 };
@@ -13,7 +18,7 @@ const submit = () => {
     ul.innerHTML += `<li class="chat-left">
     <div class="chat-avatar">
       <img
-        src="https://www.bootdey.com/img/Content/avatar/avatar3.png"
+        src="${sex == "male" ? avatarMale : avatarFemale}"
         alt="Retail Admin"
       />
       <div class="chat-name">Luan</div>
@@ -48,16 +53,16 @@ socket.on("server-to-client", (chat) => {
   </div>
   <div class="chat-avatar">
     <img
-      src="https://www.bootdey.com/img/Content/avatar/avatar3.png"
+      src="${chat.sex == "male" ? avatarMale : avatarFemale}"
       alt="Retail Admin"
     />
     <div class="chat-name">${chat.user}</div>
   </div>
   </li>`;
 });
-socket.on("join-room", (id1) => {
+socket.on("join-room", ({ id1, sex1 }) => {
   id = id1;
-  console.log(id);
+  sex = sex1;
 });
 socket.on("new-join-room", (userList) => {
   console.log(userList);
@@ -69,7 +74,7 @@ socket.on("new-join-room", (userList) => {
         ul.innerHTML += `  <li class="person" data-chat="person1">
         <div class="user">
           <img
-            src="https://www.bootdey.com/img/Content/avatar/avatar3.png"
+            src="${item.sex == "male" ? avatarMale : avatarFemale}"
             alt="Retail Admin"
           />
           <span class="status busy"></span>
@@ -95,7 +100,7 @@ socket.on("dis-conect", (userList) => {
       ul.innerHTML += `  <li class="person" data-chat="person1">
       <div class="user">
         <img
-          src="https://www.bootdey.com/img/Content/avatar/avatar3.png"
+          src="${item.sex == "male" ? avatarMale : avatarFemale}"
           alt="Retail Admin"
         />
         <span class="status busy"></span>

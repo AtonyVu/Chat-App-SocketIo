@@ -18,14 +18,15 @@ const port = process.env.PORT || 5000;
 const io = socketIo(server);
 ///ket noi server voi client
 io.on("connection", (socket) => {
-  socket.on("join-info-room", ({ Room, Name }) => {
+  socket.on("join-info-room", ({ Room, Name, sex }) => {
     socket.join(Room);
     userList.push({
       Name: Name,
       date: dateFormat("dd/MM/yyyy - hh:mm:ss", new Date()),
       id: socket.id,
+      sex: sex,
     });
-    socket.emit("join-room", socket.id);
+    socket.emit("join-room", { id1: socket.id, sex1: sex });
     io.to(Room).emit("new-join-room", userList);
 
     socket.on("client-to-server", (chat, callback) => {
@@ -34,6 +35,7 @@ io.on("connection", (socket) => {
       socket.broadcast.to(Room).emit("server-to-client", {
         ...chat,
         user: Name,
+        sex: sex,
         chat: customFilter.clean(chat.chat),
       });
     });
