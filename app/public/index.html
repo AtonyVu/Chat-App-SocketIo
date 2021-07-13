@@ -19,36 +19,51 @@
   </head>
   <link rel="stylesheet" href="./css.css" />
   <body>
-    <form action="/chat.html">
-      <div class="form-group">
-        <label for="">Phòng</label>
-        <input
-          type="text"
-          class="form-control"
-          name="Room"
-          id=""
-          aria-describedby="helpId"
-          placeholder=""
-        />
-        <label for="">Tên</label>
-        <input
-          type="text"
-          class="form-control"
-          name="Name"
-          id=""
-          aria-describedby="helpId"
-          placeholder=""
-        />
-        <label for="">Giới Tính</label>
-        <select class="form-control" name="sex">
-          <option value="male" selected="selected">Nam</option>
-          <option value="female">Nữ</option>
-        </select>
-      </div>
-      <div>
-        <button type="submit">Submit</button>
-      </div>
-    </form>
+    <section>
+      <header>
+        <h2
+          style="
+            text-align: center;
+
+            background: -webkit-linear-gradient(#eee, #333);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          "
+        >
+          CHAT APP LUÂN
+        </h2>
+      </header>
+      <form action="/chat.html">
+        <div class="form-group">
+          <label for="">Phòng</label>
+          <input
+            type="text"
+            class="form-control"
+            name="Room"
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <label for="">Tên</label>
+          <input
+            type="text"
+            class="form-control"
+            name="Name"
+            id=""
+            aria-describedby="helpId"
+            placeholder=""
+          />
+          <label for="">Giới Tính</label>
+          <select class="form-control" name="sex">
+            <option value="male" selected="selected">Nam</option>
+            <option value="female">Nữ</option>
+          </select>
+        </div>
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+    </section>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
