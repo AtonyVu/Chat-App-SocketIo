@@ -544,7 +544,7 @@ body {
     width: 20px !important;
   }
   .container {
-    height: 812px;
+    height: 100vh;
   }
   .textAria {
     height: 70px !important;
