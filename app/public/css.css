@@ -66,6 +66,10 @@ body {
   background-color: rgba(255, 255, 255, 0.1) !important;
   height: 100%;
 }
+.no-gutters-item1 {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  height: 100%;
+}
 .chat-container {
   height: 100%;
   background-color: rgba(255, 255, 255, 0.1) !important;
@@ -262,10 +266,8 @@ body {
     height: 20px;
   }
   .users .person p.name-time {
-    display: none;
   }
   .users .person p.name-time .time {
-    display: none;
   }
 }
 
@@ -456,7 +458,79 @@ body {
     font-size: 0.8rem;
   }
 }
-
+@media (max-width: 400px) {
+  .no-gutters-item {
+    width: 20px !important;
+  }
+  .container {
+    height: 812px;
+  }
+  .textAria {
+    height: 70px !important;
+    width: 70%;
+    float: left;
+    margin-left: 5px;
+  }
+  .btn-submit {
+    margin-top: 17px;
+    margin-left: 5px;
+    padding: 20px 20px;
+  }
+  .textAria textarea {
+    width: 100%;
+    height: 100%;
+  }
+  .chat-container li.chat-left {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+  }
+  .chat-container li.chat-right {
+    justify-content: end;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+    align-items: center;
+  }
+  .chat-container li img {
+    width: 20px;
+    height: 20px;
+  }
+  .chat-container li.chat-left .chat-avatar {
+    margin: 0 20px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 10px;
+  }
+  .chat-container li.chat-left .chat-hour {
+    justify-content: flex-end;
+  }
+  .chat-container li.chat-left .chat-name {
+    margin-left: 5px;
+  }
+  .chat-container li.chat-right .chat-avatar {
+    order: -1;
+    margin: 0 0 0 5px;
+    align-items: center;
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  .chat-container li.chat-right .chat-hour {
+    justify-content: flex-start;
+    order: 2;
+  }
+  .chat-container li.chat-right .chat-name {
+    margin-right: 5px;
+  }
+  .chat-container li .chat-text {
+    font-size: 0.8rem;
+  }
+}
 .chat-form {
   padding: 15px;
   width: 100%;
