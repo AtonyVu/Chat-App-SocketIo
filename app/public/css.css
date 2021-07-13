@@ -20,11 +20,12 @@ section {
   height: 100vh;
   background-size: cover;
   background-position: center;
-  animation: color-change 10s linear infinite;
+  animation: color-change 5s linear infinite;
   animation-delay: 1s;
 }
 /*adding rain img and making opacity 0*/
-section:before {
+section::after {
+  z-index: -1;
   content: "";
   position: absolute;
   top: 0;
@@ -54,14 +55,21 @@ on diffrent interval using keyframe*/
   0% {
     filter: hue-rotate(0deg);
   }
+  25% {
+    filter: hue-rotate(180g);
+  }
   50% {
-    filter: hue-rotate(0deg);
+    filter: hue-rotate(90deg);
   }
   100% {
-    filter: hue-rotate(360deg);
+    filter: hue-rotate(0deg);
   }
 }
+.formLogin {
+  padding: 0 20px;
+}
 header {
+  z-index: -2;
   position: relative;
   left: 20%;
   top: 20px;
